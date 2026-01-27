@@ -6,7 +6,7 @@ import App from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter basename="/B-TBM-100-BDX-1-1-yowl-3">  {/* ← Important */}
+    <BrowserRouter basename="/MVP">  {/* 👈 correspond au nom du repo */}
       <App />
     </BrowserRouter>
   </StrictMode>,
