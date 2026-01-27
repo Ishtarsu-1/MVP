@@ -194,7 +194,7 @@ body,
 
 .menu {
   position: fixed;
-  bottom: 100px;
+  bottom: 1px;
   /* 👈 monte la navbar */
   left: 0;
 

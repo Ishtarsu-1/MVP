@@ -1,0 +1,133 @@
+/* =========================
+   FEED CONTAINER
+   ========================= */
+.feed {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+
+    height: calc(100vh - 120px);
+    /* 👈 ajuste selon header + navbar */
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: #00ffae transparent;
+}
+
+/* Scrollbar Webkit (Chrome, Edge, Safari) */
+.feed::-webkit-scrollbar {
+    width: 6px;
+}
+
+.feed::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.feed::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 255, 170, 0.6);
+    border-radius: 999px;
+}
+
+
+.feed-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+/* =========================
+   FEED LIST
+   ========================= */
+.feed-list {
+    display: grid;
+    gap: 14px;
+}
+
+/* =========================
+   FEED CARD
+   ========================= */
+.feed-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 255, 170, 0.12);
+    border-radius: 18px;
+    padding: 14px;
+    backdrop-filter: blur(12px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feed-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 255, 170, 0.15);
+}
+
+/* =========================
+   FEED META
+   ========================= */
+.feed-meta {
+    font-size: 12px;
+    opacity: 0.65;
+    margin-bottom: 6px;
+}
+
+/* =========================
+   FEED TITLE
+   ========================= */
+.feed-title-post {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 6px 0 0 0;
+}
+
+/* =========================
+   FEED IMAGE
+   ========================= */
+.feed-image {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-top: 10px;
+}
+
+/* =========================
+   FEED LINK
+   ========================= */
+.feed-link {
+    margin-top: 10px;
+}
+
+.feed-link a {
+    color: #00ffae;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.feed-link a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   LOAD MORE
+   ========================= */
+.feed-load-more {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.feed-load-more button {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 255, 170, 0.35);
+    background: rgba(0, 255, 170, 0.12);
+    color: #00ffae;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.feed-load-more button:hover {
+    background: rgba(0, 255, 170, 0.22);
+    transform: scale(1.05);
+}
