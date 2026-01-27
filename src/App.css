@@ -68,7 +68,7 @@ body,
 .map-container {
   flex: 1;
   position: relative;
-  
+
   overflow: hidden;
 }
 
@@ -160,6 +160,7 @@ body,
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(18px);
   border-top: 1px solid rgba(0, 255, 170, 0.15);
+
 }
 
 .nav-item {
@@ -192,15 +193,21 @@ body,
 }
 
 .menu {
+  position: fixed;
+  bottom: 100px;
+  /* 👈 monte la navbar */
+  left: 0;
+
   height: 60px;
   width: 100%;
   background-color: #04110b;
-  z-index: 10;
+  z-index: 1000;
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 
 
 .menu ul {
