@@ -1,0 +1,249 @@
+/* =========================
+   RESET & BASE
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
+  color: #e6fdf1;
+}
+
+/* =========================
+   APP CONTAINER
+   ========================= */
+.app {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER / SEARCH
+   ========================= */
+.header {
+  padding: 16px;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.1));
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 255, 170, 0.15);
+}
+
+.search-bar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e6fdf1;
+  font-size: 14px;
+}
+
+.search-bar input::placeholder {
+  color: rgba(230, 253, 241, 0.45);
+}
+
+/* =========================
+   MAP VIEW
+   ========================= */
+.map-container {
+  flex: 1;
+  position: relative;
+  
+  overflow: hidden;
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center,
+      rgba(0, 255, 170, 0.08),
+      transparent 60%);
+}
+
+/* =========================
+   FLOATING BUTTONS
+   ========================= */
+.fab {
+  position: absolute;
+  bottom: 90px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #00ffae, #00cc8a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #04110b;
+  font-size: 22px;
+  box-shadow: 0 0 25px rgba(0, 255, 170, 0.45);
+}
+
+/* =========================
+   MESSAGE LIST
+   ========================= */
+.messages {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+}
+
+.message-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  border: 1px solid rgba(0, 255, 170, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.message-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0b1a14;
+  border: 2px solid rgba(0, 255, 170, 0.4);
+}
+
+.message-content {
+  flex: 1;
+}
+
+.message-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.message-preview {
+  font-size: 12px;
+  opacity: 0.65;
+  margin-top: 2px;
+}
+
+.message-time {
+  font-size: 11px;
+  opacity: 0.45;
+}
+
+/* =========================
+   BOTTOM NAV
+   ========================= */
+.bottom-nav {
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(18px);
+  border-top: 1px solid rgba(0, 255, 170, 0.15);
+}
+
+.nav-item {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(230, 253, 241, 0.55);
+  transition: all 0.25s ease;
+}
+
+.nav-item.active {
+  background: rgba(0, 255, 170, 0.18);
+  color: #00ffae;
+  box-shadow: 0 0 18px rgba(0, 255, 170, 0.45);
+}
+
+/* =========================
+   TAG / FILTER
+   ========================= */
+.tag {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(0, 255, 170, 0.12);
+  color: #00ffae;
+  font-size: 12px;
+  border: 1px solid rgba(0, 255, 170, 0.35);
+}
+
+.menu {
+  height: 60px;
+  width: 100%;
+  background-color: #04110b;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+}
+
+.menu li a {
+  color: white;
+  font-size: 22px;
+  /* taille des icônes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu li a:hover {
+  color: #00ffcc;
+}
+
+
+.menubg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 20% 20%,
+      rgba(0, 255, 120, 0.25),
+      transparent 40%),
+    radial-gradient(circle at 80% 30%,
+      rgba(0, 200, 100, 0.25),
+      transparent 45%),
+    radial-gradient(circle at 50% 70%,
+      rgba(0, 180, 90, 0.3),
+      transparent 50%),
+    radial-gradient(circle at 10% 80%,
+      rgba(0, 150, 80, 0.25),
+      transparent 45%),
+    radial-gradient(circle at 90% 90%,
+      rgba(0, 255, 140, 0.2),
+      transparent 50%);
+  filter: blur(60px);
+}
